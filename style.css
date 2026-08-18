@@ -754,3 +754,80 @@ button:hover {
   }
 
 }
+/* =========================
+   MORNING AT VELORA
+   ========================= */
+
+.morning {
+  max-width: 1250px;
+  margin: 40px auto 160px;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.morning-content {
+  max-width: 500px;
+}
+
+.morning-content h2 {
+  font-size: clamp(50px, 5vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -2px;
+  margin-bottom: 35px;
+}
+
+.morning-content > p:not(.subtitle) {
+  color: #999;
+  line-height: 1.9;
+  margin-bottom: 22px;
+}
+
+.morning-image {
+  height: 620px;
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.morning-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.08);
+  transition:
+    transform 1.5s cubic-bezier(.2,.7,.2,1);
+}
+
+.morning.visible .morning-image img {
+  transform: scale(1);
+}
+
+.morning .text-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #d6c08d;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.morning .text-link:hover {
+  transform: translateX(7px);
+}
+
+@media (max-width: 800px) {
+
+  .morning {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    margin-bottom: 100px;
+    padding: 0 25px;
+  }
+
+  .morning-image {
+    height: 500px;
+  }
+
+}
