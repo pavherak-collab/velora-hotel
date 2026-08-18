@@ -892,3 +892,162 @@ button:hover {
 .room-card:hover h3 {
   color: #d6c08d;
 }
+/* =========================
+   PREMIUM MICRO INTERACTIONS
+   ========================= */
+
+/* NAV LINKS */
+
+nav a:not(.nav-book) {
+  position: relative;
+  padding-bottom: 6px;
+}
+
+nav a:not(.nav-book)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: #d6c08d;
+  transition: width 0.35s ease;
+}
+
+nav a:not(.nav-book):hover::after {
+  width: 100%;
+}
+
+
+/* BOOKING BUTTON */
+
+.nav-book {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-book::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: rgba(255,255,255,0.18);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+.nav-book:hover::before {
+  left: 140%;
+}
+
+
+/* MAIN BUTTONS */
+
+button {
+  transition:
+    transform 0.35s cubic-bezier(.2,.7,.2,1),
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+button:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow:
+    0 15px 40px rgba(214, 192, 141, 0.22);
+  background: #e0cb9a;
+}
+
+button:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+
+/* TEXT LINKS */
+
+.text-link {
+  position: relative;
+  width: fit-content;
+}
+
+.text-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 1px;
+  background: #d6c08d;
+  transition: width 0.35s ease;
+}
+
+.text-link:hover::after {
+  width: 100%;
+}
+
+
+/* EXPERIENCE ITEMS */
+
+.experience-item {
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.experience-item:hover {
+  transform: translateY(-6px);
+  border-color: #d6c08d;
+}
+
+.experience-item h3 {
+  transition: color 0.35s ease;
+}
+
+.experience-item:hover h3 {
+  color: #d6c08d;
+}
+
+
+/* QUOTE */
+
+.quote {
+  transition: transform 0.5s ease;
+}
+
+.quote:hover .quote-mark {
+  transform: translateY(-5px);
+}
+
+.quote-mark {
+  transition: transform 0.5s ease;
+}
+
+
+/* STORY IMAGE */
+
+.story-image {
+  overflow: hidden;
+}
+
+.story-image img {
+  transition:
+    transform 1.2s cubic-bezier(.2,.7,.2,1),
+    filter 0.8s ease;
+}
+
+.story-image:hover img {
+  transform: scale(1.035);
+  filter: brightness(1.05);
+}
+
+
+/* DINING IMAGE */
+
+.dining-image {
+  transition: transform 1.2s cubic-bezier(.2,.7,.2,1);
+}
+
+.dining:hover .dining-image {
+  transform: scale(1.025);
+}
