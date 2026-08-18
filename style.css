@@ -831,3 +831,64 @@ button:hover {
   }
 
 }
+/* =========================
+   PREMIUM CARD HOVER
+   ========================= */
+
+.room-card,
+.amenity {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.5s cubic-bezier(.2,.7,.2,1),
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.room-card:hover,
+.amenity:hover {
+  transform: translateY(-10px);
+  border-color: rgba(214, 192, 141, 0.55);
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(214, 192, 141, 0.08);
+}
+
+.room-card::after,
+.amenity::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(214, 192, 141, 0.10),
+      transparent 55%
+    );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.room-card:hover::after,
+.amenity:hover::after {
+  opacity: 1;
+}
+
+.room-card img {
+  transition: transform 0.9s cubic-bezier(.2,.7,.2,1);
+}
+
+.room-card:hover img {
+  transform: scale(1.06);
+}
+
+.amenity h3,
+.room-card h3 {
+  transition: color 0.35s ease;
+}
+
+.amenity:hover h3,
+.room-card:hover h3 {
+  color: #d6c08d;
+}
